@@ -1,0 +1,10 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:9991/eureka/
+server:
+  port: 9992
+spring:
+  application:
+    name: service-hello
+
