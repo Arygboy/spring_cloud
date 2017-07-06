@@ -16,7 +16,7 @@ public class SpringEurekaService1Application {
         SpringApplication.run(SpringEurekaService1Application.class, args);
     }
 
-    @Value("${service.port}")
+    @Value("${server.port}")
     String port;
 
     @RequestMapping(value = {"/", "index"})
