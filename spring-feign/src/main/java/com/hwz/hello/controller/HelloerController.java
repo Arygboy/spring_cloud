@@ -12,7 +12,7 @@ public class HelloerController {
     @Autowired
     private SchedualServiceHello schedualServiceHello;
 
-    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String sayHi() {
         return schedualServiceHello.sayHiFromClient();
     }
