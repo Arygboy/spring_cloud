@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "service-hello")
 public interface SchedualServiceHello {
 
-    @RequestMapping(value = {"/","/index"},method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     String sayHiFromClient();
 }
