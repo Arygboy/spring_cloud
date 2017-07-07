@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "service-hello")
+@FeignClient(value = "service-hello",fallback = SchedualServiceHelloHystric.class)
 public interface SchedualServiceHello {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)

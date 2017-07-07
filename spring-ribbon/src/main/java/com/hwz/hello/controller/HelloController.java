@@ -1,6 +1,7 @@
 package com.hwz.hello.controller;
 
 import com.hwz.hello.service.HelloService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +14,12 @@ public class HelloController {
     HelloService helloService;
 
     @RequestMapping(value = {"/", "/index"})
+    @HystrixCommand(fallbackMethod = "hiError")
     public String hello() {
         return helloService.helloService();
+    }
+
+    public String hiError() {
+        return "hi,word! sorry,error!";
     }
 }
